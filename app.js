@@ -12,6 +12,7 @@ console.log(person.college, person.courseName);
 const Person = require("./person");
 let Person1 = new Person("Aashish Loknath Panigrahi",24);
 console.log(Person1);
+Person1.greeting();
 
 //How to import multiple objects from person2 file
 const { printMyFirstName,printMyLastName } = require("./person2");
