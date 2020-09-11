@@ -33,15 +33,15 @@ else{
 }
 
 //Appending to the existing file
-//fs.appendFile(path,'content',callback) appends a file
-//fs.appendFile(
-//    filepath,
-//    '\nlet userDetails = {userID:"asxyzp",sessionID:0123456789};',
-//    (err)=>{
-//        if (err) throw err;
-//        console.log("FILE APPENDED!");
-//    }
-//);
+fs.appendFile(path,'content',callback) appends a file
+fs.appendFile(
+    filepath,
+    '\nlet userDetails = {userID:"asxyzp",sessionID:0123456789};',
+    (err)=>{
+        if (err) throw err;
+        console.log("FILE APPENDED!");
+    }
+);
 
 //Reading the file
 fs.readFile(filepath,'utf8',(err,data)=>{
