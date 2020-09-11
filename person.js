@@ -2,7 +2,11 @@
     Exporting a class from one file to another file
     Created by Aashish Loknath Panigrahi
 */
-//console.log(__dirname,__filename);
+
+const path = require('path');
+
+//Module wrapper function contains directory name which is stored in __dirname & the file name is stored in __filename
+console.log(__dirname,__filename);
 
 class Person{
     constructor(name,age){
