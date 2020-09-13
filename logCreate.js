@@ -8,34 +8,51 @@ const EventEmitter = require('events');
 class LogEmitter extends EventEmitter {}
 const logEmitter = new LogEmitter();
 
-let count = 0;
 
 logEmitter.on('serverStarted',()=>{
-    ++count;
-    let time = new Date.now();
+    let time = Date.now();
     //Checks whether log/log.txt exists or not
     //If it doesn't exists then it creates one & adds new log that server has been created
     if(!fs.existsSync(path.join(__dirname,'logs','log.txt'))){
-        fs.writeFile(path.join(__dirname,'logs','log.txt'),`${count} : SERVER CREATED AT ${time}.`,(err)=>{
+        //Time at which server was created, will be appended to the file
+        fs.appendFile(path.join(__dirname,'log.txt'),`SERVER CREATED AT ${time}.\n`,(err)=>{
             if (err){
                 throw err;
             }
-            console.log(`${count} : SERVER CREATED AT ${time}.`);
+            console.log(`SERVER CREATED AT ${time}.\n`);
+        });
+    }
+    else{
+        //Time at which server was created, will be appended to the file
+        fs.appendFile(path.join(__dirname,'log.txt'),`SERVER CREATED AT ${time}.\n`,(err)=>{
+            if (err){
+                throw err;
+            }
+            console.log(`SERVER CREATED AT ${time}.\n`);
         });
     }   
 });
 
 logEmitter.on('serverFailed',()=>{
-    ++count;
-    let time = new Date.now();
+    let time = Date.now();
     //Checks whether log/log.txt exists or not
     //If it doesn't exists then it creates one & adds new log that sever failed at starting due to some error
-    if(!fs.existsSync(path.join(__dirname,'logs','log.txt'))){
-        fs.writeFile(path.join(__dirname,'logs','log.txt'),`${count} : SERVER FAILED AT ${time}.`,(err)=>{
+    if(!fs.existsSync(path.join(__dirname,'log.txt'))){
+        //Time at which server was created, will be appended to the file
+        fs.appendFile(path.join(__dirname,'logs','log.txt'),`SERVER FAILED AT ${time}.\n`,(err)=>{
             if (err){
                 throw err;
             }
-            console.log(`${count} : SERVER FAILED AT ${time}.`);
+            console.log(`SERVER FAILED AT ${time}.\n`);
+        });
+    }
+    else{
+        //Time at which server was created, will be appended to the file
+        fs.appendFile(path.join(__dirname,'log.txt'),`SERVER FAILED AT ${time}.\n`,(err)=>{
+            if (err){
+                throw err;
+            }
+            console.log(`SERVER FAILED AT ${time}.\n`);
         });
     }
 });
