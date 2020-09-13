@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "open": "node openInBrowser.js"
   },
   "author": "Aashish Loknath Panigrahi",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
+    "open": "^7.2.1",
     "uuid": "^8.3.0"
   },
   "devDependencies": {
