@@ -57,4 +57,13 @@ logEmitter.on('serverFailed',()=>{
     }
 });
 
+logEmitter.on("request",(url)=>{
+    fs.appendFile(path.join(__dirname,'log.txt'),`URL REQUESTED : ${url}.\n`,(err)=>{
+        if (err){
+            throw err;
+        }
+        console.log(`URL REQUESTED : ${url}`);
+    });
+});
+
 module.exports = logEmitter;
