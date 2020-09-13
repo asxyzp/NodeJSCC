@@ -15,20 +15,20 @@ logEmitter.on('serverStarted',()=>{
     //If it doesn't exists then it creates one & adds new log that server has been created
     if(!fs.existsSync(path.join(__dirname,'logs','log.txt'))){
         //Time at which server was created, will be appended to the file
-        fs.appendFile(path.join(__dirname,'log.txt'),`SERVER CREATED AT ${time}.\n`,(err)=>{
+        fs.appendFile(path.join(__dirname,'log.txt'),`SERVER CREATED AT ${time}\n`,(err)=>{
             if (err){
                 throw err;
             }
-            console.log(`SERVER CREATED AT ${time}.\n`);
+            console.log(`SERVER CREATED AT ${time}\n`);
         });
     }
     else{
         //Time at which server was created, will be appended to the file
-        fs.appendFile(path.join(__dirname,'log.txt'),`SERVER CREATED AT ${time}.\n`,(err)=>{
+        fs.appendFile(path.join(__dirname,'log.txt'),`SERVER CREATED AT ${time}\n`,(err)=>{
             if (err){
                 throw err;
             }
-            console.log(`SERVER CREATED AT ${time}.\n`);
+            console.log(`SERVER CREATED AT ${time}\n`);
         });
     }   
 });
@@ -48,17 +48,17 @@ logEmitter.on('serverFailed',()=>{
     }
     else{
         //Time at which server was created, will be appended to the file
-        fs.appendFile(path.join(__dirname,'log.txt'),`SERVER FAILED AT ${time}.\n`,(err)=>{
+        fs.appendFile(path.join(__dirname,'log.txt'),`SERVER FAILED AT ${time}\n`,(err)=>{
             if (err){
                 throw err;
             }
-            console.log(`SERVER FAILED AT ${time}.\n`);
+            console.log(`SERVER FAILED AT ${time}\n`);
         });
     }
 });
 
 logEmitter.on("request",(url)=>{
-    fs.appendFile(path.join(__dirname,'log.txt'),`URL REQUESTED : ${url}.\n`,(err)=>{
+    fs.appendFile(path.join(__dirname,'log.txt'),`URL REQUESTED : ${url}\n`,(err)=>{
         if (err){
             throw err;
         }
