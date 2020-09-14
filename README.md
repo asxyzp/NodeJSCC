@@ -7,4 +7,6 @@ Concepts I've learned in this crash course :
 - How to create an HTTP server & dynamically serve files
 - Basic git commands (add, commit, push, remote)
 - How to initialise & install the NPM dependencies & dependencies
- 
+
+<h3> Concepts I've covered : </h3> 
+<img src=https://pbs.twimg.com/media/Eh0fifpU8AAxLPG.jpg"/>
